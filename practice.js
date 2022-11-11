@@ -36,7 +36,13 @@ var multiplesOfFive = function (numbers) {
 
 // use _.each to build an array containing only tweets belonging to a specified user.
 var getUserTweets = function(tweets, user) {
-
+  var result = [];
+  _.each(tweets, function(tweet) {
+    if(tweet.user === user) {
+      result.push(tweet);
+    }
+  });
+  return result;
 };
 
 /*
