@@ -133,7 +133,10 @@ var allUserMessages = function(tweets) {
 
 */
 var applyCoupon = function (groceries, coupon) {
-
+  return _.map(groceries, function(grocery) {
+    grocery.salePrice = '$' + (Number(grocery.price.slice(1)) * (1 - coupon)).toFixed(2);
+    return grocery;
+  })
 };
 
 /*
