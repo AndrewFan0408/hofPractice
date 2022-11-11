@@ -173,7 +173,10 @@ var dessertCategories = function (desserts) {
   }
 */
 var countMessagesPerUser = function(tweets) {
-
+  return _.reduce(tweets, function(count, tweet) {
+    count[tweet.user] = count[tweet.user] === undefined ? 1 : count[tweet.user] + 1;
+    return count;
+  }, {});
 };
 
 // given an array of movie data objects,return an array containing
