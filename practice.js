@@ -25,7 +25,13 @@ var moreFruits = function (fruits) {
 // use _.each to traverse the number array and determine
 // which are multiples of five.
 var multiplesOfFive = function (numbers) {
-
+  var count = 0;
+  _.each(numbers, function(number) {
+    if (number % 5 === 0) {
+      count ++;
+    }
+  });
+  return count;
 };
 
 // use _.each to build an array containing only tweets belonging to a specified user.
